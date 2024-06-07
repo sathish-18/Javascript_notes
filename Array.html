@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+    <title>Array</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+    body{
+        font-family: "Roboto", sans-serif;
+        color: black;
+    }
+</style>
+</head>
+<body>
+    <h1>Array</h1>
+    <h2>An array is an object that can store multiple values at once</h2>
+    
+<p>length()	
+concat()	
+join()
+constructor()	
+every()	
+forEach()
+map()	
+includes()	
+pop()
+push()	
+reduce()	
+shift()
+slice()	
+splice()	
+sort()
+indexOf()	
+fill()	
+</p>
+<p>.push() - adds one or more elements to the end of an array</p>
+<p>.pop() - removes the last element from an array</p>
+<p>.shift() - removes the first element from an array</p>
+<p>.unshift() - adds one or more elements to the beginning of an array</p>
+<p>.slice() - returns a shallow copy of a portion of an array</p>
+<p>.splice() - adds and/or removes elements from an array</p>
+<p>.sort() - sorts the elements of an array in place</p>
+<p>.reverse() - reverses the order of the elements in an array</p>
+<p>.concat() - returns a new array that is a concatenation of the original array and one or more additional arrays or values</p>
+<p>.join() - creates and returns a new string by concatenating all of the elements in an array with a specified separator.</p>
+   
+<h3>forEach()</h3>
+<p>This method calls a function for each element in an array.</p>
+<p>This method is not executed for empty elements. </p>
+   <script>
+
+// Array
+    //An array is an object that can store multiple values at once
+        let a=[10,20,30,40];
+        console.log(a);
+        console.table(a);
+        console.log(a[1]);
+
+        let b=new Array(10,20,30);
+        console.log(b);
+
+        let d=new Array("sathish",40,true,{m1:100,m2:200,m3:300});
+        console.table(d);
+
+    console.log("forEach()")
+
+        
+        const number=[1,2,3,4,5,6,7,8,9,10];
+        number.forEach((value)=>{
+            console.log(value);
+        });
+
+        number.forEach((value,index)=>{
+            console.log("index "+index+" value "+value);
+        });
+
+        const users =[
+            {full_name:"Ram",age:12,city:"Salem",salary:10000},
+            {full_name:"Sam",age:15,city:"Chennai",salary:10500},
+            {full_name:"Ravi",age:22,city:"Namakkal",salary:12000},
+            {full_name:"Joes",age:18,city:"Hosur",salary:6000},
+            {full_name:"Aureen",age:47,city:"Dharmapuri",salary:10000},
+            {full_name:"Stanley",age:10,city:"Salem",salary:8000},
+        ];
+    console.table(users);
+    users.forEach((value)=>{
+        console.log(value.full_name);
+    })
+
+    console.log("1. Find the length of each string in an array:");
+
+        const words=["apple", "banana","grape"];
+        const lengths=[];
+        words.forEach(word=>lengths.push(word.length));
+        console.log(lengths);
+
+    console.log("2. Skip negative numbers in an array:");
+
+    const nanumbers = [1, -2, 3, -4, 5];
+    const positiveNumbers=[];
+    nanumbers.forEach(nnumber=>{
+        if(nnumber>1){
+            positiveNumbers.push(nnumber);
+        }
+    });
+    console.log(positiveNumbers);
+
+    console.log("3. Change Grade property value using forEach:");
+
+    const newstudents = [
+    { name: "Alice", grade: "A" },
+    { name: "Bob", grade: "B" },
+    { name: "Charlie", grade: "C" }
+    ];
+
+    newstudents.forEach(stutent=>stutent.grade="A+");
+    console.table(newstudents);
+
+    console.log("4. Increment all elements in an array by 1.");
+    const incrementnumber =[1,2,3,4];
+    const incrementnumbers=[];
+    incrementnumber.forEach(incnumber=>incrementnumbers.push(incnumber+1));
+    console.log(incrementnumbers);
+
+    console.log("5. Increase the age of all users in an array of objects.");
+    const incrageuser =[
+    { name: "Alice", age: 26 },
+    { name: "Bob", age: 31 },
+    { name: "Charlie", age: 23 }
+    ];
+
+    incrageuser.forEach((user)=>{user.age+=1});
+    console.table(incrageuser);
+
+
+    console.log("6. Example of using forEach() method to find the max element of an array");
+
+    const maxnumber = [1, 2, 3, 4, 5];
+    let max=maxnumber[0];
+    maxnumber.forEach((mnumber)=>{
+      if(mnumber>max)  {
+        max=mnumber;
+      }
+    })
+    console.log(max);
+
+    console.log("7. toUpperCase()");
+    const uppercasename=["sathish","ajith","arun"];
+    uppercasename.forEach((namevalue, index)=>{
+        uppercasename[index]=namevalue.toUpperCase();
+    });
+    console.log(uppercasename);
+
+    //Destructuring Assignment  
+
+    let denumbers = [1,2,3,4,5];
+    let [v, t, ...rest] = denumbers;
+    console.log(v);
+    console.log(t);
+    console.log(rest);
+    </script>
+</body>
